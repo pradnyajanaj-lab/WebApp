@@ -334,3 +334,14 @@ footer {
         white-space: nowrap;
     }
 }
+/* Fix Radio Button Alignment */
+form input[type="radio"] {
+    width: auto;
+    margin: 8px 8px 15px 0;
+    vertical-align: middle;
+}
+
+form input[type="radio"] + label {
+    display: inline;
+    margin-right: 20px;
+}
