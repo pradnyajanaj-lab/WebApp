@@ -194,7 +194,6 @@
                placeholder="Enter number of tickets">
 
         <div class="preferences">
-
             <strong>Additional Preferences:</strong>
 
             <label>
@@ -208,7 +207,6 @@
                        value="No Food">
                 No Food
             </label>
-
         </div>
 
         <button type="submit">Book Tickets</button>
@@ -220,6 +218,8 @@
 
     </form>
 
+    
+
 </main>
 
 <footer>
@@ -227,11 +227,9 @@
 </footer>
 
 <script>
-
     const form = document.getElementById("bookingForm");
 
     form.addEventListener("submit", function(event) {
-
         event.preventDefault();
 
         if (!form.checkValidity()) {
@@ -240,16 +238,14 @@
         }
 
         document.getElementById("successMessage").style.display = "block";
-
     });
 
     form.addEventListener("reset", function() {
-
         document.getElementById("successMessage").style.display = "none";
-
     });
-
 </script>
+
+<script src="app.js"></script>
 
 </body>
 </html>
