@@ -1,4 +1,4 @@
-/* IPL Ticket Booking Website - CSS Styling */
+/* IPL Ticket Booking Website - Responsive CSS */
 
 /* 1. Theme Variables */
 :root {
@@ -39,7 +39,8 @@ section h2 {
     font-size: 30px;
 }
 
-/* 3. Navigation Bar */
+/* 3. Navigation Bar - Flexbox */
+
 header {
     background-color: var(--primary);
     position: fixed;
@@ -50,41 +51,53 @@ header {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
-nav {
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 8%;
 }
 
-nav h2 {
+.logo {
     color: var(--accent);
 }
 
-nav ul {
+.nav-links {
     display: flex;
+    align-items: center;
     list-style: none;
     gap: 25px;
 }
 
-nav ul li a {
+.nav-links li a {
     color: var(--white);
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
 }
 
-nav ul li a:hover {
+.nav-links li a:hover {
     color: var(--accent);
 }
 
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 28px;
+    cursor: pointer;
+}
+
 /* 4. Hero Section */
+
 #hero {
     margin-top: 65px;
     min-height: 450px;
     background: linear-gradient(135deg, #101b3f, #263f78);
     color: var(--white);
     text-align: center;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -119,6 +132,7 @@ nav ul li a:hover {
 }
 
 /* 5. About Section */
+
 #about {
     background-color: var(--white);
 }
@@ -136,12 +150,22 @@ nav ul li a:hover {
     margin-bottom: 8px;
 }
 
-/* 6. Match Schedule Table */
+/* 6. Match Schedule - CSS Grid */
+
 #matches {
     background-color: var(--background);
 }
 
-label {
+.match-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.match-controls label {
     font-weight: bold;
 }
 
@@ -152,6 +176,183 @@ input {
     border-radius: 5px;
     margin: 8px 0 15px;
     font-size: 15px;
+}
+
+.view-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.view-controls button {
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.view-controls button:hover,
+.view-controls button.active {
+    background-color: var(--accent);
+    color: var(--primary);
+}
+
+/* Match Cards Grid */
+
+.match-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.match-card {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    border-top: 5px solid var(--accent);
+    transition: 0.3s;
+}
+
+.match-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.match-card h3 {
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.match-card h2 {
+    color: var(--primary);
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.match-card p {
+    margin-bottom: 8px;
+}
+
+.match-card a {
+    display: inline-block;
+    margin-top: 15px;
+    background-color: var(--accent);
+    color: var(--primary);
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* List View */
+
+.match-container.list-view {
+    grid-template-columns: 1fr;
+}
+
+.match-container.list-view .match-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.match-container.list-view .match-card h2 {
+    margin-bottom: 0;
+}
+
+/* 7. Booking Section */
+
+#booking {
+    background-color: var(--white);
+}
+
+.booking-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+
+form {
+    background-color: var(--background);
+    padding: 25px;
+    border-radius: 10px;
+    width: 55%;
+    min-width: 280px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+}
+
+form input,
+form select {
+    width: 100%;
+}
+
+form button {
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: 13px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+form button:hover {
+    background-color: var(--accent);
+    color: var(--primary);
+}
+
+/* Radio Button Alignment */
+
+form input[type="radio"] {
+    width: auto;
+    margin: 8px 8px 15px 0;
+    vertical-align: middle;
+}
+
+form input[type="radio"] + label {
+    display: inline;
+    margin-right: 20px;
+}
+
+/* 8. Booking Summary Card */
+
+.summary-card {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 25px;
+    border-radius: 10px;
+    width: 30%;
+    min-width: 250px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.summary-card h3 {
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+
+.summary-card p {
+    margin-bottom: 12px;
+}
+
+/* 9. My Bookings */
+
+#my-bookings {
+    background-color: var(--background);
 }
 
 table {
@@ -190,96 +391,22 @@ td a {
     font-weight: bold;
 }
 
-/* 7. Booking Section */
-#booking {
-    background-color: var(--white);
-}
+/* 10. Guidelines - CSS Grid */
 
-.booking-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 35px;
-    flex-wrap: wrap;
-}
-
-form {
-    background-color: var(--background);
-    padding: 25px;
-    border-radius: 10px;
-    width: 55%;
-    min-width: 280px;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
-}
-
-form label {
-    display: block;
-}
-
-form input,
-form select {
-    width: 100%;
-}
-
-form button {
-    background-color: var(--primary);
-    color: var(--white);
-    border: none;
-    padding: 13px 25px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-form button:hover {
-    background-color: var(--accent);
-    color: var(--primary);
-}
-
-/* 8. Booking Summary Card */
-.summary-card {
-    background-color: var(--primary);
-    color: var(--white);
-    padding: 25px;
-    border-radius: 10px;
-    width: 30%;
-    min-width: 250px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.summary-card h3 {
-    color: var(--accent);
-    margin-bottom: 15px;
-}
-
-.summary-card p {
-    margin-bottom: 12px;
-}
-
-/* 9. My Bookings */
-#my-bookings {
-    background-color: var(--background);
-}
-
-/* 10. Guidelines Cards */
 #guidelines {
     background-color: var(--white);
 }
 
 .guidelines-container {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    flex-wrap: wrap;
 }
 
 .guidelines-container article {
     background-color: var(--background);
     padding: 25px;
     border-radius: 10px;
-    flex: 1;
-    min-width: 220px;
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
     border-top: 4px solid var(--accent);
 }
@@ -290,6 +417,7 @@ form button:hover {
 }
 
 /* 11. Footer */
+
 footer {
     background-color: var(--primary);
     color: var(--white);
@@ -297,30 +425,21 @@ footer {
     padding: 22px;
 }
 
-/* 12. Responsive Design */
-@media (max-width: 768px) {
-    nav {
+/* 12. Tablet Responsive Design */
+
+@media (max-width: 992px) {
+
+    .match-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .guidelines-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .booking-container {
         flex-direction: column;
-        gap: 12px;
-    }
-
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
-    }
-
-    #hero {
-        margin-top: 110px;
-        padding: 50px 20px;
-    }
-
-    #hero h1 {
-        font-size: 30px;
-    }
-
-    section {
-        padding: 40px 5%;
+        align-items: center;
     }
 
     form,
@@ -328,20 +447,111 @@ footer {
         width: 100%;
     }
 
+}
+
+/* 13. Mobile Responsive Design */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 15px 5%;
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+        padding: 15px 0;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    #hero {
+        margin-top: 60px;
+        padding: 50px 20px;
+        min-height: 400px;
+    }
+
+    #hero h1 {
+        font-size: 30px;
+    }
+
+    #hero p {
+        font-size: 16px;
+    }
+
+    section {
+        padding: 40px 5%;
+    }
+
+    section h2 {
+        font-size: 25px;
+    }
+
+    .match-container {
+        grid-template-columns: 1fr;
+    }
+
+    .guidelines-container {
+        grid-template-columns: 1fr;
+    }
+
+    .match-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .view-controls {
+        justify-content: center;
+    }
+
+    .match-container.list-view .match-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    form,
+    .summary-card {
+        width: 100%;
+        min-width: 0;
+    }
+
     table {
         display: block;
         overflow-x: auto;
         white-space: nowrap;
     }
-}
-/* Fix Radio Button Alignment */
-form input[type="radio"] {
-    width: auto;
-    margin: 8px 8px 15px 0;
-    vertical-align: middle;
+
 }
 
-form input[type="radio"] + label {
-    display: inline;
-    margin-right: 20px;
+/* 14. Small Mobile Devices */
+
+@media (max-width: 480px) {
+
+    #hero h1 {
+        font-size: 25px;
+    }
+
+    #hero a {
+        padding: 10px 18px;
+    }
+
+    .match-card {
+        padding: 18px;
+    }
+
+    .view-controls button {
+        padding: 9px 12px;
+        font-size: 13px;
+    }
+
 }
