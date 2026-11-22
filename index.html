@@ -129,7 +129,8 @@
 
             <div class="booking-container">
 
-                <form>
+                <form id="booking-form">
+
                     <label for="match">Select Match:</label>
                     <select id="match" name="match" required>
                         <option value="">Choose a match</option>
@@ -164,16 +165,24 @@
                            pattern="[0-9]{10}" required>
 
                     <button type="submit">Confirm Booking</button>
+
                 </form>
 
-                <!-- Booking Summary -->
+                <!-- Booking Summary Card -->
                 <aside class="summary-card">
+
                     <h3>Booking Summary</h3>
-                    <p>Match: Not selected</p>
-                    <p>Stand: Not selected</p>
-                    <p>Ticket Price: ₹0</p>
-                    <p>Quantity: 0</p>
-                    <h3>Total Amount: ₹0</h3>
+
+                    <p>Match: <span id="summary-match">Not selected</span></p>
+
+                    <p>Stand: <span id="summary-stand">Not selected</span></p>
+
+                    <p>Ticket Price: <span id="summary-price">₹0</span></p>
+
+                    <p>Quantity: <span id="summary-quantity">0</span></p>
+
+                    <h3>Total Amount: <span id="summary-total">₹0</span></h3>
+
                 </aside>
 
             </div>
@@ -193,6 +202,7 @@
                         <th>Total Amount</th>
                     </tr>
                 </thead>
+
                 <tbody>
                     <!-- Booking records will appear here in the future -->
                 </tbody>
@@ -206,6 +216,7 @@
             <h2>Stadium Guidelines</h2>
 
             <div class="guidelines-container">
+
                 <article>
                     <h3>Ticket Verification</h3>
                     <p>Carry a valid ticket and complete the entry verification process.</p>
@@ -220,6 +231,7 @@
                     <h3>Prohibited Items</h3>
                     <p>Weapons, fireworks, outside food and other restricted items are not allowed.</p>
                 </article>
+
             </div>
         </section>
 
@@ -229,6 +241,8 @@
     <footer>
         <p>&copy; 2026 IPL Ticket Booking. All Rights Reserved.</p>
     </footer>
-   <script src="app.js"></script>
+
+    <script src="app.js"></script>
+
 </body>
 </html>
