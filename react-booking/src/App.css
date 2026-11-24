@@ -86,8 +86,15 @@ nav a:hover {
 
 .match-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 25px;
+  align-items: start;
+}
+
+/* Individual Match */
+
+.match-container > div {
+  min-width: 0;
 }
 
 .match-card {
@@ -117,7 +124,102 @@ nav a:hover {
   margin-bottom: 8px;
 }
 
+/* Buttons */
+
+.match-container button {
+  background-color: #101b3f;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.match-container button:hover {
+  background-color: #263f78;
+}
+
+.match-container button:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+/* Booking Form */
+
+.booking-form {
+  background-color: white;
+  padding: 25px;
+  margin-top: 18px;
+  border-radius: 10px;
+  border-top: 5px solid #f5b82e;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.booking-form h2 {
+  color: #101b3f;
+  margin-bottom: 15px;
+}
+
+.booking-form h3 {
+  color: #263f78;
+  margin-bottom: 18px;
+}
+
+.booking-form label {
+  display: block;
+  margin: 12px 0 7px;
+  font-weight: bold;
+}
+
+.booking-form input {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 15px;
+  outline: none;
+}
+
+.booking-form input:focus {
+  border-color: #263f78;
+}
+
+.booking-form p {
+  margin-top: 18px;
+  margin-bottom: 10px;
+  font-size: 17px;
+  color: #101b3f;
+}
+
+/* Confirm Booking Button */
+
+.booking-form button {
+  width: 100%;
+  background-color: #f5b82e;
+  color: #101b3f;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+.booking-form button:hover {
+  background-color: #e5a817;
+}
+
 /* Responsive Design */
+
+@media (max-width: 900px) {
+  .match-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 
 @media (max-width: 768px) {
   nav {

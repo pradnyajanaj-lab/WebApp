@@ -6,6 +6,8 @@ function MatchCard(props) {
       <p><strong>Date:</strong> {props.date}</p>
       <p><strong>Time:</strong> {props.time}</p>
       <p><strong>Venue:</strong> {props.venue}</p>
+      <p><strong>Ticket Price:</strong> ₹{props.price}</p>
+      <p><strong>Available Seats:</strong> {props.availableSeats}</p>
     </div>
   )
 }
